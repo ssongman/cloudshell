@@ -1,6 +1,7 @@
 #!/bin/bash
 
-VERSION=v1.5.0-beta.5
+VERSION=${VERSION:v1.5.0}
+
 PLATFORM=linux-amd64
 
 if [ "$BUILDPLATFORM" == "linux/arm64" ] 

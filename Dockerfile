@@ -7,8 +7,9 @@ RUN yarn install
 RUN yarn run build
 
 FROM --platform=${BUILDPLATFORM:-linux/amd64} ghcr.io/dtzar/helm-kubectl:3.9
-
+ARG VERSION
 ENV BUILDPLATFORM=${BUILDPLATFORM:-linux/amd64}
+ENV VERSION=${VERSION}
 COPY install-ttyd.sh /bin/install-ttyd.sh
 COPY install-vela.sh /bin/install-vela.sh
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories \
