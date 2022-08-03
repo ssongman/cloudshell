@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=${VERSION:v1.5.0}
+VERSION=${VERSION:v1.5.0-beta.6}
 
 PLATFORM=linux-amd64
 
