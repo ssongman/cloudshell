@@ -1,12 +1,21 @@
 name: Registry
-on:
-  push:
-    branches:
-      - main
-    tags:
-      - "v*"
-  workflow_dispatch: {}
 
+#on:
+#  push:
+#    branches:
+#      - main
+#    tags:
+#      - "v*"
+#  workflow_dispatch: {}
+
+on:      
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Docker TAG"
+        required: true
+        default: "master"
+        
 jobs:
   publish-images:
     runs-on: ubuntu-latest
