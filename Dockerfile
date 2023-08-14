@@ -22,10 +22,10 @@ RUN curl -fsSLO https://github.com/openshift/okd/releases/download/4.7.0-0.okd-2
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.16/community/" > /etc/apk/repositories \
 #    && apk add --no-cache bash
     && apk -U upgrade \
-    && apk add --no-cache ca-certificates lrzsz vim \
-    && ln -s /usr/bin/lrz	/usr/bin/rz \
-    && ln -s /usr/bin/lsz	/usr/bin/sz \
-    && /bin/install-ttyd.sh 
+#    && apk add --no-cache ca-certificates lrzsz vim \
+#    && ln -s /usr/bin/lrz	/usr/bin/rz \
+#    && ln -s /usr/bin/lsz	/usr/bin/sz \
+#    && /bin/install-ttyd.sh 
 
 COPY --from=builder /app/dist/inline.html index.html
 ENTRYPOINT ttyd
