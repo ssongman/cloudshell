@@ -52,7 +52,7 @@ jobs:
         name: Build & Pushing vela-core for Dockerhub, GHCR and ACR
         with:
           context: .
-          file: Dockerfile
+          file: Dockerfile_origin  # 수정함
           labels: |-
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.revision=${{ github.sha }}
