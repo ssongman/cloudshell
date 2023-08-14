@@ -25,7 +25,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.16/community/" > /etc/apk/repo
 #    && apk add --no-cache ca-certificates lrzsz vim \
 #    && ln -s /usr/bin/lrz	/usr/bin/rz \
 #    && ln -s /usr/bin/lsz	/usr/bin/sz \
-#    && /bin/install-ttyd.sh 
+    && /bin/install-ttyd.sh 
 
 COPY --from=builder /app/dist/inline.html index.html
 ENTRYPOINT ttyd
