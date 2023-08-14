@@ -24,8 +24,8 @@ RUN echo -e "http://nl.alpinelinux.org/alpine/v3.5/main\nhttp://nl.alpinelinux.o
     && apk add --no-cache bash \
     && apk -U upgrade  \
     && apk add --no-cache ca-certificates lrzsz vim \
-#    && ln -s /usr/bin/lrz	/usr/bin/rz \
-#    && ln -s /usr/bin/lsz	/usr/bin/sz \
+    && ln -s /usr/bin/lrz	/usr/bin/rz \
+    && ln -s /usr/bin/lsz	/usr/bin/sz \
     && /bin/install-ttyd.sh 
 
 COPY --from=builder /app/dist/inline.html index.html
