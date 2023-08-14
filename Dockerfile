@@ -19,7 +19,8 @@ RUN curl -fsSLO https://github.com/openshift/okd/releases/download/4.7.0-0.okd-2
     && rm -rf kubectl \
     && rm -rf openshift-client-linux-4.7.0-0.okd-2021-09-19-013247.tar.gz
 # RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories \
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.16/community/" >> /etc/apk/repositories \
+# RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.16/community/" >> /etc/apk/repositories \
+RUN echo -e "http://nl.alpinelinux.org/alpine/v3.5/main\nhttp://nl.alpinelinux.org/alpine/v3.5/community" > /etc/apk/repositories \
     && apk add --no-cache bash \
     && apk -U upgrade  \
     && apk add --no-cache ca-certificates lrzsz vim \
